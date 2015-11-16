@@ -21,3 +21,143 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+
+/****************** first*****************/
+/****************************************/
+.header-first {
+	margin-left:20px;
+	margin-right:20px;
+	text-align:center;
+	.title-main {
+		text-align: center;
+		color: white;
+		padding-top: 100px;
+		padding-bottom: 30px;
+	}
+	#log-in-first {
+		float: left;
+		width: 50%; 
+		text-align:center;
+	}
+	#sign-up-first {
+		float: left; 
+		width: 50%; 
+		text-align:center;
+	}
+	a {
+		width: 100px;
+	}
+}
+
+/****************** log in *****************/
+/****************************************/
+.log-in-single {
+	background: url(img/adsa.png) center; 
+	background-size: cover; 
+	padding: 25% 3% 3% 3%;
+	.calm-bg {
+		padding: 7.5% 7% 3.5% 1.5%;
+		a {
+			color: white; 
+			font-size: 1em; 
+			background-color: #11C1F3; 
+			float: left;
+		}
+		p {
+			font-size: 20px; 
+			text-align: center ; 
+			color: white;
+		}
+	}
+	.padding {
+		.input-label {
+			font-size: 0.7em;
+		}
+		#log-in {
+			background-color: #11C1F3; 
+			color: white;  
+			margin-bottom: -1px;
+		}
+	}
+}
+
+/**************** sign up ***************/
+/****************************************/
+
+.sign-up-single {
+	background: url(img/adsa.jpg) center; 
+	background-size: cover; 
+	padding: 25% 3% 3% 3%;
+	.calm-bg {
+		padding: 1.5% 7% 1.5% 1.5%;
+		a {
+			color: white !important; 
+			font-size: 1em; 
+			background-color: #11C1F3;
+		}
+		p {
+			font-size:20px; 
+			text-align: center ; 
+			color: white;
+		}
+	}
+	.padding {
+		.item {
+			.input-label {
+				font-size: 0.7em;
+			}
+			p {
+				color:red !important;
+			}
+		}
+	}
+}
+
+
+/**************** table ***************/
+/****************************************/
+
+.card {
+	opacity: 0.90;
+}
+
+.container {
+	.header-table{
+		padding-top: 15px;
+		padding-right: 21px;
+		margin-bottom: 20px;
+		color: white;
+		font-size: 18px;
+		text-align: center;
+		background-color: #11C1F3;
+		height: 55px;
+		a {
+			margin-left: 10px;
+			float: left;
+			font-size: 18px;
+		}
+	}
+	.row {
+		.table {
+			background-color: #FBF8F8;
+			margin-left: 25px;
+		    margin-right: 25px;
+		    margin-top: 25px;
+		    height: 71px;
+			border-radius: 50%;
+			/*padding-left: 10px;
+			padding-top: 5px;*/
+			.table-number {
+				text-align: center;
+				color: gray;
+				padding-top: 15px;
+				font-size: 23px;
+				font-family: cursive;
+			}
+		}
+	}
+}
+
+.scroll-content {
+	background-color: #A8E9FB;
+}
