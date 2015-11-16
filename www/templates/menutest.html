@@ -1,0 +1,55 @@
+
+<ion-side-menus >
+	<ion-side-menu-content>
+		<ion-header-bar class="bar-calm">
+			<div class="buttons button-left header-item">
+				<span class="left-buttons">
+          			<button class="button button-icon button-clear ion-android-menu" ng-click="toggleLeft()"></button>
+        		</span>
+        	</div>
+        	<h1 class="title">My Restaurant</h1>
+        	<div class="buttons buttons-right header-item">
+        		<span class="right-buttons">
+          			<button class="button button-icon button-clear ion-ios-gear-outline button-right" ng-click="openPopover($event)"></button>
+        		</span>
+      		</div>
+		</ion-header-bar>
+			
+			<ion-content>
+				<div class="row" style="margin-top:50px;">
+					<div class="col col-45" id="card-1" ><a href="#login">Menu</a>
+					</div>	
+					<div class="card col col-45" id="card-1" ><a href="#login">Table</a>
+					</div>	
+				</div>
+				<div class="row" >
+					<div class="card col col-45" id="card-1" ><a href="#login">Order</a>
+					</div>	
+					<div class="card col col-45 ion-pizza" id="card-1" ><a href="#login" >
+				
+					</a>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="card col col-45" id="card-1" ><a href="#login">Print</a>
+					</div>	
+					<div class="card col col-45" id="card-1" ><a href="#login">About</a>
+					</div>	
+				</div>
+			
+		</ion-content>
+
+	</ion-side-menu-content>
+		<ion-side-menu side="left">
+			<ion-list>
+				<ion-item>Home</ion-item>
+			</ion-list>
+			<ion-list>
+				<ion-item>Home</ion-item>
+			</ion-list>
+			<ion-list>
+				<ion-item>Home</ion-item>
+			</ion-list>
+		</ion-side-menu>
+	
+</ion-side-menus> 

@@ -1,0 +1,57 @@
+
+
+<ion-view view-title="Signup" align-title="left" >
+  <ion-content style="background: url(img/straw1.jpg) center; background-size: cover; padding: 25% 3% 3% 3%">
+    <div class="card list"> 
+       
+     
+      <div class="calm-bg" style="padding: 1.5% 7% 1.5% 1.5%;margin:-1px;">
+       <a class="button button-icon button-clear button-small button-calm ion-chevron-left" style="color: white; font-size: 1em; background-color: #11C1F3"  href="#first"></a>
+        <p style="font-size:20px; text-align: center ; color: white">My restaurant</p>
+      </div>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate >
+      <div class="padding">
+        <div>
+          <!-- FULLNAME -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>FULLNAME</strong></span>
+            <input type="text" id="fullname"placeholder="Fullname" name="fullname" ng-model="fullname" required>
+            <p ng-show="userForm.fullname.$invalid && !userForm.fullname.$pristine" style="color:red">You name is required.</p>
+          </label>
+          <!-- USERNAME -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>USERNAME</strong></span>
+            <input type="text" placeholder="Username" id="username"name="username" ng-model="username" ng-minlength="6" ng-maxlength="25">
+             <p ng-show="userForm.username.$error.minlength" class="help-block" style="color:red">Username is too short.</p>
+            <p ng-show="userForm.username.$error.maxlength" class="help-block" style="color:red">Username is too long.</p>
+          </label>
+          <!-- EMAIL -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>EMAIL</strong></span>
+            <input type="email" placeholder="Email" id="email" name="email" ng-model="email" >
+            <p ng-show="userForm.email.$error.email" style="color:red">Enter a valid email.</p>
+
+          </label>
+          <!-- PASSWORD -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>PASSWORD</strong></span>
+            <input type="password" id="password" placeholder="Password" ng-model="password">
+          </label>
+          <!-- CONFIRM PASS -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>CONFIRM PASSWORD</strong></span>
+            <input type="password" placeholder="Comfirm Password" name="repassword" ng-model="repassword" password-match="password">
+            <p ng-show="userForm.repassword.$error.unique" style="color:red">RePassword is not matched.
+            </p>
+          </label>
+        </div>
+        <br>
+       <!-- SUBMIT -->
+          <!-- <a class="button button-full button-calm" >Sign up</a> -->
+           <button class="button button-full button-calm" type="submit">Create an account
+           </button>
+      </div>
+    </form>
+    </div>
+  </ion-content>
+</ion-view>

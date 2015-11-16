@@ -1,0 +1,45 @@
+
+
+<ion-view view-title="Login" align-title="left" >
+  <ion-content style="background: url(img/straw1.jpg) center; background-size: cover; padding: 25% 3% 3% 3%">
+    <div class="card list"> 
+       
+     
+      <div class="calm-bg" style="padding: 1.5% 7% 1.5% 1.5%;margin:-1px;">
+       <a class="button button-icon button-clear button-small button-calm ion-chevron-left" style="color: white; font-size: 1em; background-color: #11C1F3"  href="#first"></a>
+        <p style="font-size:20px; text-align: center ; color: white">My restaurant</p>
+      </div>
+    <form name="userForm" ng-submit="loginForm(userForm.$valid)" novalidate >
+      <div class="padding">
+        <div>
+ 
+          <!-- USERNAME -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>USERNAME</strong></span>
+            <input type="text" id="username"placeholder="Username" name="username" ng-model="username" required>
+            <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" style="color:red">Your username is required.</p>
+          </label>
+         
+          <!-- PASSWORD -->
+          <!-- <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>PASSWORD</strong></span>
+            <input type="password" id="password" placeholder="Password" ng-model="password" required>
+            <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" style="color:red">Your password is required.</p>
+          </label> -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label" style="font-size: 0.7em"><strong>PASSWORD</strong></span>
+            <input type="password" id="password" placeholder="Password" name="password" ng-model="password" required>
+            <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" style="color:red">Your password is required.</p>
+          </label>
+          
+        </div>
+        <br>
+       <!-- SUBMIT -->
+          <!-- <a class="button button-full button-calm" >Sign up</a> -->
+           <button class="button button-full button-calm" type="submit">Log in
+           </button>
+      </div>
+    </form>
+    </div>
+  </ion-content>
+</ion-view>

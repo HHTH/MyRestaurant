@@ -1,0 +1,57 @@
+
+<ion-side-menus >
+	<ion-side-menu-content>
+		
+		<ion-header-bar class="bar-calm">
+			<div class="buttons button-left header-item">
+				<span class="left-buttons">
+          			<button class="button button-icon button-clear ion-android-menu" ng-click="toggleLeft()"></button>
+        		</span>
+        	</div>
+        	<h1 class="title">My Restaurant</h1>
+        	<div class="buttons buttons-right header-item">
+        		<span class="right-buttons">
+          			<button class="button button-icon button-clear ion-ios-gear-outline button-right" ng-click="openPopover($event)"></button>
+        		</span>
+      		</div>
+		</ion-header-bar>
+			
+			<ion-content>
+				<div class="row" style="margin-top:50px;">
+					<div class="col col-50" id="card-1" style="border-top:0;border-left:0;" ><a href="#menu"><img src="img/menu.png" class="cangiua"></a>
+					</div>	
+					<div class="col col-50" id="card-1"  style="border-top:0;border-right:0;" ><a href="#table"><img src="img/table1.png" class="cangiua"></a>
+					</div>	
+				</div>
+				<div class="row" >
+					<div class="col col-50" id="card-1" style="border-left:0;" ><a href="#login"><img src="img/order4.png" class="cangiua"></a>
+					</div>	
+					<div class="col col-50" id="card-1" style="border-right:0;"><a href="#login" >
+					<img src="img/addstaff.png" class="cangiua">
+					</a>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col col-50" id="card-1" style="border-left:0;border-bottom:0;"><a href="#login"><img src="img/print.png" class="cangiua"></a>
+					</div>	
+					<div class="col col-50" id="card-1"style="border-right:0;border-bottom:0;" ><a href="#login"><img src="img/about1.png" class="cangiua"></a>
+					</div>	
+				</div>
+			
+		</ion-content>
+
+	</ion-side-menu-content>
+		
+		<ion-side-menu side="left">
+			<ion-list>
+				<ion-item ng-click="Home()">Home</ion-item>
+			</ion-list>
+			<ion-list>
+				<ion-item ng-click="Acount()">Account</ion-item>
+			</ion-list>
+			<ion-list>
+				<ion-item ng-click="Logout()">Log out</ion-item>
+			</ion-list>
+		</ion-side-menu>
+	
+</ion-side-menus> 
