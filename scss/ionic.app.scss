@@ -52,11 +52,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 /****************** log in *****************/
 /****************************************/
 .log-in-single {
-	background: url(img/adsa.png) center; 
+	background: url(img/straw.jpg) center; 
 	background-size: cover; 
 	padding: 25% 3% 3% 3%;
 	.calm-bg {
-		padding: 7.5% 7% 3.5% 1.5%;
+		padding: 7.5% 7% 4.5% 1.5%;
+		margin-top: -1px;
 		a {
 			color: white; 
 			font-size: 1em; 
@@ -89,11 +90,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	background-size: cover; 
 	padding: 25% 3% 3% 3%;
 	.calm-bg {
-		padding: 1.5% 7% 1.5% 1.5%;
+		padding: 6.5% 7% 4.5% 1.5%;
+		margin:-1px;
 		a {
 			color: white !important; 
 			font-size: 1em; 
 			background-color: #11C1F3;
+			float: left
 		}
 		p {
 			font-size:20px; 
@@ -119,6 +122,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .card {
 	opacity: 0.90;
+}
+
+.background-table{
+	background-color: #A8E9FB;
 }
 
 .container {
@@ -158,6 +165,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	}
 }
 
-.scroll-content {
-	background-color: #A8E9FB;
+/**************** home ***************/
+/****************************************/
+
+.home-wrap {
+	img {
+		width: 100%;
+	}
 }

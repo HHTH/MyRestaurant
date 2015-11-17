@@ -9107,11 +9107,12 @@ a.button {
 /****************** log in *****************/
 /****************************************/
 .log-in-single {
-  background: url(img/adsa.png) center;
+  background: url(img/straw.jpg) center;
   background-size: cover;
   padding: 25% 3% 3% 3%; }
   .log-in-single .calm-bg {
-    padding: 7.5% 7% 3.5% 1.5%; }
+    padding: 7.5% 7% 4.5% 1.5%;
+    margin-top: -1px; }
     .log-in-single .calm-bg a {
       color: white;
       font-size: 1em;
@@ -9135,11 +9136,13 @@ a.button {
   background-size: cover;
   padding: 25% 3% 3% 3%; }
   .sign-up-single .calm-bg {
-    padding: 1.5% 7% 1.5% 1.5%; }
+    padding: 6.5% 7% 4.5% 1.5%;
+    margin: -1px; }
     .sign-up-single .calm-bg a {
       color: white !important;
       font-size: 1em;
-      background-color: #11C1F3; }
+      background-color: #11C1F3;
+      float: left; }
     .sign-up-single .calm-bg p {
       font-size: 20px;
       text-align: center;
@@ -9153,6 +9156,9 @@ a.button {
 /****************************************/
 .card {
   opacity: 0.90; }
+
+.background-table {
+  background-color: #A8E9FB; }
 
 .container .header-table {
   padding-top: 15px;
@@ -9184,5 +9190,7 @@ a.button {
     font-size: 23px;
     font-family: cursive; }
 
-.scroll-content {
-  background-color: #A8E9FB; }
+/**************** home ***************/
+/****************************************/
+.home-wrap img {
+  width: 100%; }
