@@ -1,6 +1,6 @@
 app.controller('loginController',loginController);
 
-function loginController($ionicPopup,$scope,$location) {  
+function loginController($ionicPopup,$scope,$location,$rootScope) {  
     $scope.loginForm = function (isValid) {
 
         if (isValid) {
@@ -10,7 +10,17 @@ function loginController($ionicPopup,$scope,$location) {
     		        var alertPopup = $ionicPopup.alert({
      		        title: 'Log In  SUCCESSFULLY'
    		          });
-   		          $location.path( "/home" );
+                var currentUser = Parse.User.current();
+                  if (currentUser) {
+                  // do stuff with the user
+                  $rootScope.username=currentUser.get("username");
+                  $location.path("/home");
+                  } else {
+                  // show the signup or login page
+                  }
+
+   		          //$location.path( "/home" );
+
   			       },
   			      error: function(user, error) {
     		      // The login failed. Check error to see why.
