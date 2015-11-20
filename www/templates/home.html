@@ -43,17 +43,21 @@
 	</ion-side-menu-content>
 		
 		<ion-side-menu side="left">
-			 <ion-header-bar class="dark-bg expanded" style="background: url('img/straw1.jpg') center; background-size: cover;">
+			 <ion-header-bar class="dark-bg expanded" style="background: url('img/straw1.jpg') center; background-size: cover;     height: 22%;">
 	      		<div class="item-avatar">
-		      		<img src="img/cuu.png">
+		      		<img src="img/howl's-moving-castle.jpg" >
 		      		
 	      		</div>
-	      		<div class="menu-bottom" style="background-color:red">
+	      		<div class="user-name">
 		        	{{username || 'unknown error'}}
 		      		</div>
 	    	</ion-header-bar>
-	    <ion-content>
-			<ion-list>
+	    <ion-content >
+			<ion-list class="account">
+				<ion-item ng-click="home()">Home</ion-item>
+				<ion-item ng-click="setting()">Setting</ion-item>
+				<!-- <ion-item ng-click="logOut()">Log out</ion-item>
+				<ion-item ng-click="logOut()">Log out</ion-item> -->
 				<ion-item ng-click="logOut()">Log out</ion-item>
 			</ion-list>
 		</ion-contet>

@@ -9194,3 +9194,19 @@ a.button {
 /****************************************/
 .home-wrap img {
   width: 100%; }
+
+.item-avatar img:first-child {
+  top: 53%;
+  left: 9px;
+  max-width: 62px !important;
+  max-height: 62px !important; }
+
+.user-name {
+  float: left;
+  margin-top: 95px;
+  font-size: 16px;
+  font-family: cursive;
+  color: white; }
+
+.account .list {
+  margin-top: 102px; }

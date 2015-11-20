@@ -18,6 +18,7 @@ app.controller('homeController',ContentController);
 
 
       $scope.logOut = function() {
+       
       //log out of application
       Parse.User.logOut();
       var currentUser = Parse.User.current();
@@ -26,4 +27,5 @@ app.controller('homeController',ContentController);
       $rootScope.username = "";  
       };
 
-	}
+      
+};
