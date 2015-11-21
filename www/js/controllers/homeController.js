@@ -1,6 +1,6 @@
 
 app.controller('homeController',ContentController);
-	function ContentController($location,$scope, $ionicSideMenuDelegate,$rootScope) {
+	function ContentController($ionicPopup,$location,$scope, $ionicSideMenuDelegate,$rootScope) {
   		$scope.toggleLeft = function() {
     	$ionicSideMenuDelegate.toggleLeft();
   		};
@@ -17,15 +17,38 @@ app.controller('homeController',ContentController);
       $scope.username=$rootScope.username;
 
 
+      // $scope.logOut = function() {
+      // //log out of application
+      // Parse.User.logOut();
+      // var currentUser = Parse.User.current();
+      // // goto login interface
+      // $location.path("/login");     
+      // $rootScope.username = "";  
+      // };
       $scope.logOut = function() {
-       
       //log out of application
-      Parse.User.logOut();
-      var currentUser = Parse.User.current();
+       // $scope.showPopup = function() {
+      //   $scope.showConfirm = function() {
+          var confirmPopup = $ionicPopup.confirm({
+         title: 'Consume Ice Cream',
+         template: 'Are you sure you want to eat this ice cream?'
+         });
+         confirmPopup.then(function(res) {
+           if(res) {
+           Parse.User.logOut();
+           var currentUser = Parse.User.current();
       // goto login interface
-      $location.path("/login");     
-      $rootScope.username = "";  
-      };
+           $location.path("/login");     
+           $rootScope.username = "";  
+          } else {
+         console.log('You are not sure');
+         $location.path("/home");   
+          }
+        });
+   //     };
 
-      
-};
+    //  };
+    };
+
+  }
+	
