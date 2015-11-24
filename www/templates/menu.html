@@ -1,4 +1,4 @@
-<ion-header-bar class="bar-calm">
+ <ion-header-bar class="bar-calm">
 	<div class="buttons button-left header-item">
 		<span class="left-buttons">
           	<button class="button button-icon button-clear ion-android-menu" ng-click="toggleLeft()"></button>
@@ -11,27 +11,83 @@
         	</span>
       	</div>
 </ion-header-bar>
-<ion-content>
-  <div class="card">
-  <div class="item item-divider">
-    I'm a Header in a Card!
-  </div>
-  <div class="item item-text-wrap">
-    This is a basic Card with some text.
-  </div>
-  <div class="item item-divider">
-    I'm a Header in a Card!
-  </div>
-  <div class="item item-text-wrap">
-    This is a basic Card with some text.
-  </div>
-  <div class="item item-divider">
-    I'm a Header in a Card!
-  </div>
-  <div class="item item-text-wrap">
-    This is a basic Card with some text.
-  </div>
-  
-</div>
+<ion-content> 
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <div class="card list">
+
+    <div class="item" ng-repeat="item in items">Food item 
+      {{item.foodName}} <span class="item-note"> {{item.foodPrice}}</span>
+      
+    </div>
+      <div class="item ion-plus-round" ng-click="modalA.show()">Add Item</div>
+  </div> 
 
 </ion-content>
+
+
+<script id="templates/modalA.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">New Food Item</h1>
+          <button class="button button-clear button-primary" ng-click="modalA.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding" >
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Food Name</span>
+              <input ng-model="newItem.foodName" id="foodName"type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Price</span>
+              <input ng-model="newItem.foodPrice" id="foodPrice" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="createItem(newItem)">Create</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+    
+<!-- <ion-header-bar class="bar-positive">
+      <h1 class="title">Contacts</h1>
+      <div class="buttons">
+        <button class="button button-icon ion-compose" ng-click="modal.show()">
+        </button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item ng-repeat="contact in contacts">
+          {{contact.name}}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    
+    <script id="templates/modal.html" type="text/ng-template">
+      <ion-modal-view style="width:60% ;margin:auto;height:auto;margin-top:50%;margin-bottom:50%">
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">New Contact</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding" >
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">First Name</span>
+              <input ng-model="newUser.firstName" type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Last Name</span>
+              <input ng-model="newUser.lastName" type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input ng-model="newUser.email" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+     -->
