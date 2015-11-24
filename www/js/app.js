@@ -44,7 +44,7 @@ app.config(['$routeProvider',
         })
         .when('/menu', {
           templateUrl: 'templates/menu.html',
-         // controller: 'tableController'
+          controller: 'menuController'
         })
 
         
