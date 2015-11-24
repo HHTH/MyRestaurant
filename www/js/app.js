@@ -46,6 +46,10 @@ app.config(['$routeProvider',
           templateUrl: 'templates/menu.html',
          // controller: 'tableController'
         })
+         .when('/upload-image', {
+          templateUrl: 'templates/upload-image.html',
+         controller: 'uploadImageController'
+        })
 
         
         .otherwise({
