@@ -23,7 +23,7 @@ app.controller('menuController',modalController);
             }
           });
         $scope.$broadcast('scroll.refreshComplete');
-        $scope.$apply()
+        // $scope.$apply()
       }
       $ionicModal.fromTemplateUrl('templates/modalA.html', {
         scope: $scope,

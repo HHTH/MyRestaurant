@@ -46,10 +46,10 @@ app.config(['$routeProvider',
           templateUrl: 'templates/menu.html',
           controller: 'menuController'
         })
-         .when('/upload-image', {
-          templateUrl: 'templates/upload-image.html',
-         controller: 'uploadImageController'
-        })
+        //  .when('/upload-image', {
+        //   templateUrl: 'templates/upload-image.html',
+        //  controller: 'uploadImageController'
+        // })
 
         
         .otherwise({
