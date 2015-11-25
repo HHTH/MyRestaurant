@@ -1,15 +1,12 @@
- <ion-header-bar class="bar-calm">
+<ion-header-bar class="bar-calm">
 	<div class="buttons button-left header-item">
 		<span class="left-buttons">
-          	<button class="button button-icon button-clear ion-android-menu" ng-click="toggleLeft()"></button>
+        <!--   	<button class="button button-icon button-clear ion-android-menu" ng-click="toggleLeft()"></button> -->
+        <a class="button button-icon button-calm ion-home" href="#home"></a>
         </span>
     </div>
     <h1 class="title">Menu</h1>
-        <div class="buttons buttons-right header-item">
-        	<span class="right-buttons">
-          		<button class="button button-icon button-clear ion-ios-gear-outline button-right" ng-click="openPopover($event)"></button>
-        	</span>
-      	</div>
+
 </ion-header-bar>
 <ion-content> 
   <ion-refresher
@@ -17,10 +14,9 @@
     on-refresh="doRefresh()">
   </ion-refresher>
   <div class="card list">
-
-    <div class="item" ng-repeat="item in items">Food item 
+    <div class="item item-divider" id="itemheader">Food Name <span class="item-note"id="itemheader"> Price</span></div>
+    <div class="item" ng-repeat="item in items" ng-click="deleteItem()"> 
       {{item.foodName}} <span class="item-note"> {{item.foodPrice}}</span>
-      
     </div>
       <div class="item ion-plus-round" ng-click="modalA.show()">Add Item</div>
   </div> 
@@ -30,9 +26,9 @@
 
 <script id="templates/modalA.html" type="text/ng-template">
       <ion-modal-view>
-        <ion-header-bar class="bar bar-header bar-positive">
+        <ion-header-bar class="bar bar-header bar-positive" id="modalA">
           <h1 class="title">New Food Item</h1>
-          <button class="button button-clear button-primary" ng-click="modalA.hide()">Cancel</button>
+          <button class="button button-clear button-primary ion-close-round"style="padding-right:5px" ng-click="modalA.hide()" ></button>
         </ion-header-bar>
         <ion-content class="padding" >
           <div class="list">
@@ -44,7 +40,7 @@
               <span class="input-label">Price</span>
               <input ng-model="newItem.foodPrice" id="foodPrice" type="text">
             </label>
-            <button class="button button-full button-positive" ng-click="createItem(newItem)">Create</button>
+            <button class="button button-full button-positive" style="background-color:#f77b55;border:0" ng-click="createItem(newItem)">Create</button>
           </div>
         </ion-content>
       </ion-modal-view>
