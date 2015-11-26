@@ -10,11 +10,8 @@
   width: 80% !important;
 
 }
-<<<<<<< HEAD
+
 #AddFood {
-=======
-#modalAddFood {
->>>>>>> origin/master
     border-color:#f77b55;
     background-color: #f77b55;
     background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);
