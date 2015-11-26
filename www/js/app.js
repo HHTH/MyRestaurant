@@ -42,6 +42,11 @@ app.config(['$routeProvider',
           templateUrl: 'templates/table.html',
           controller: 'tableController'
         })
+        .when('/orderDetail/:tableId', {
+          templateUrl:'templates/orderDetail.html',
+          
+          controller: 'orderDetailController'
+        })
         .when('/menu', {
           templateUrl: 'templates/menu.html',
           controller: 'menuController'
@@ -58,3 +63,5 @@ app.config(['$routeProvider',
     }
   ]);
  
+ 
+  
