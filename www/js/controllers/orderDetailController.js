@@ -1,6 +1,12 @@
 app.controller('orderDetailController',OrderDetailController);
-	function OrderDetailController($routeParams,$ionicPopup,$location,$scope,$rootScope) {
+	function OrderDetailController(someService,$routeParams,$ionicPopup,$location,$scope,$rootScope) {
 		$scope.tableId=$rootScope.tableId;
 		$rootScope.tableId=$routeParams.tableId;
 		
+
+		$scope.items=$rootScope.items;
+		$scope.query={}
+		$scope.queryBy='$';
+		$scope.orderProp="foodName";
 	}
+

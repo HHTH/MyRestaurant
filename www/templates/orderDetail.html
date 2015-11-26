@@ -2,21 +2,24 @@
 <ion-header-bar class="bar-calm">
 	<div class="buttons button-left header-item">
 		<span class="left-buttons">
-        <!--   	<button class="button button-icon button-clear ion-android-menu" ng-click="toggleLeft()"></button> -->
-        <a class="button button-icon button-calm ion-home" href="#table"></a>
+        <a class="button button-icon button-calm ion-chevron-left" href="#table"></a>
         </span>
     </div>
     <h1 class="title">Order for table {{tableId}}</h1>
-
+    
 </ion-header-bar>
 <ion-content>
-	<div class="card ">
+<input ng-model="query[queryBy]"/>
+	<div class="card " ng-repeat="item in items|filter:query" style="margin:10px;padding:3%;width:25%" >
     
-    <div class="item item-text-wrap" ng-repeat="item in items" ng-click="deleteItem()"> 
+  
       {{item.foodName}} 
-    </div>
-    
+      <span class="item-note"> {{item.foodPrice}}</span>
+  
   </div> 
 
 
+<!-- <div ng-repeat="item in items |filter:query">
+  {{item.foodName}}
+</div> -->
 </ion-content>
