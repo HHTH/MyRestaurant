@@ -9195,6 +9195,41 @@ a.button {
 .home-wrap img {
   width: 100%; }
 
+.home-wrap #home-menu {
+  border-right: 2px solid rgba(119, 116, 116, 0.1);
+  border-bottom: 2px solid rgba(119, 116, 116, 0.1); }
+
+.home-wrap #home-menu:active {
+  background-color: #f77b55; }
+
+.home-wrap #home-table {
+  border-bottom: 2px solid rgba(119, 116, 116, 0.1); }
+
+.home-wrap #home-table:active {
+  background-color: #A8E9FB; }
+
+.home-wrap #home-order {
+  border-right: 2px solid rgba(119, 116, 116, 0.1);
+  border-bottom: 2px solid rgba(119, 116, 116, 0.1); }
+
+.home-wrap #home-order:active {
+  background-color: #ffd47b; }
+
+.home-wrap #home-addstaff {
+  border-bottom: 2px solid rgba(119, 116, 116, 0.1); }
+
+.home-wrap #home-addstaff:active {
+  background-color: #f77b55; }
+
+.home-wrap #home-print {
+  border-right: 2px solid rgba(119, 116, 116, 0.1); }
+
+.home-wrap #home-print:active {
+  background-color: #A8E9FB; }
+
+.home-wrap #home-about:active {
+  background-color: #ffd47b; }
+
 .item-avatar img:first-child {
   top: 53%;
   left: 9px;
@@ -9216,17 +9251,53 @@ a.button {
 .bar {
   height: 50px !important; }
 
-.menu-new-food {
+/***************** create - edit food ***************/
+.menu-new-food,
+.menu-edit-food {
   padding-left: 17px;
   margin-top: 15px; }
-  .menu-new-food .item {
+  .menu-new-food .item,
+  .menu-edit-food .item {
     border-style: none; }
-  .menu-new-food .item-input {
+  .menu-new-food .item-input,
+  .menu-edit-food .item-input {
     margin-top: 10px;
     margin-bottom: 13px;
     padding: 0;
     width: 95%; }
-    .menu-new-food .item-input img {
+    .menu-new-food .item-input img,
+    .menu-edit-food .item-input img {
       width: 50%; }
-  .menu-new-food .button {
+  .menu-new-food .button,
+  .menu-edit-food .button {
     min-height: 42px; }
+  .menu-new-food .edit-ok,
+  .menu-edit-food .edit-ok {
+    background-color: #f77b55;
+    border: 0;
+    width: 43%;
+    margin-top: 10px;
+    border-radius: 0;
+    float: left;
+    margin-top: 0px;
+    margin-right: 15px; }
+  .menu-new-food .edit-cancel,
+  .menu-edit-food .edit-cancel {
+    background-color: #f77b55;
+    border: 0;
+    width: 43%;
+    margin-top: 10px;
+    border-radius: 0;
+    float: right;
+    margin-top: 0px;
+    margin-right: 15px; }
+
+.menu-change-detail-food .item {
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border: none; }
+
+.menu-change-detail-food button {
+  background-color: #f77b55 !important;
+  border: none; }
