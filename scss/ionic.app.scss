@@ -196,3 +196,31 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		margin-top: 102px;
 	}
 }
+
+/**************** Menu ***************/
+/****************************************/
+
+.bar {
+	height: 50px !important;
+}
+
+.menu-new-food {
+    padding-left: 17px;
+    margin-top: 15px;
+	.item {
+		border-style: none;
+	}
+	.item-input {
+		margin-top: 10px;
+		margin-bottom: 13px;
+		padding: 0;
+		width: 95%;
+		img {
+			width: 50%;
+		}
+	}
+	.button {
+	min-height: 42px;
+	}
+
+}

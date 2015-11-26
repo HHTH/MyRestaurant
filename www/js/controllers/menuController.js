@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 app.controller('menuController',modalController);
 
 	function modalController($scope,$ionicModal,$rootScope,$ionicPopup ){
@@ -27,111 +27,89 @@ app.controller('menuController',modalController);
       //   $scope.$apply()
       // }
       //Modal A
-      $ionicModal.fromTemplateUrl('templates/modalA.html', {
+      $ionicModal.fromTemplateUrl('templates/AddFood.html', {
         scope: $scope,
         animation: 'slide-in-up'
       }).then(function(modal) {
-        $scope.modalA = modal;
+        $scope.AddFood = modal;
       });
       
       //CREATE ITEM 
-       $scope.createItem = function(u) {        
-        var FoodItem = Parse.Object.extend("FoodItem");
-        var foodItem= new FoodItem();
-        var user=Parse.User.current();
-            foodItem.set("foodName",$("#foodName").val());
-        var str1= $("#foodPrice").val();
-        foodItem.set("foodPrice", parseInt(str1) );
-        foodItem.set("user",user);
-        foodItem.save(null,{
-          success:function(foodItem){
-            // Execute any logic that should take place after the object is saved.
-           // alert('New object created with objectId: ' +foodItem.id);
-            $rootScope.items.push({'foodName':$("#foodName").val(),'foodPrice':$("#foodPrice").val()});
-            var alertPopup = $ionicPopup.alert({
-              title: 'Add Item  SUCCESSFULLY'
-              });
-          },
-          error:function(foodItem,error){
-             // Execute any logic that should take place if the save fails.
-            // error is a Parse.Error with an error code and message.
-            alert('Failed to create new object, with error code: ' + error.message);
-          }
+      $scope.createItem = function (isValid) {
 
-        });
-        $scope.modalA.hide(); 
-      };//END CREATE
+        if (isValid) {
+           $scope.createItem = function(u) {        
+            var FoodItem = Parse.Object.extend("FoodItem");
+            var foodItem= new FoodItem();
+            var user=Parse.User.current();
+                foodItem.set("foodName",$("#foodName").val());
+            var str1= $("#foodPrice").val();
+            foodItem.set("foodPrice", parseInt(str1) );
+            foodItem.set("user",user);
+            foodItem.save(null,{
+              success:function(foodItem){
+                // Execute any logic that should take place after the object is saved.
+               // alert('New object created with objectId: ' +foodItem.id);
+                $rootScope.items.push({'foodName':$("#foodName").val(),'foodPrice':$("#foodPrice").val()});
+                var alertPopup = $ionicPopup.alert({
+                  title: 'Add Item  SUCCESSFULLY'
+                  });
+              },
+              error:function(foodItem,error){
+                 // Execute any logic that should take place if the save fails.
+                // error is a Parse.Error with an error code and message.
+                alert('Failed to create new object, with error code: ' + error.message);
+              }
 
-     // $scope.deleteItem(id){}
-
-       
-    
-=======
-app.controller('menuController',modalController);
-
-	function modalController($scope,$ionicModal,$rootScope ){
-      // Modal A
-       $rootScope.items = [
-        // { foodName: 'Gordon Freeman' ,foodPrice: 2 },
-        // { foodName: 'Barney Calhoun', foodPrice:10},
-        // { foodName: 'Lamarr the Headcrab',foodPrice:12 },
-      ];
-      $scope.doRefresh=function(){
-       var FoodItem=Parse.Object.extend("FoodItem");
-          var query= new Parse.Query(FoodItem);
-          query.find({
-            success:function(results){
-                for (var i = 0; i < results.length; i++) {
-                    var object = results[i];
-                    $rootScope.items.push({'foodName':object.get("foodName"),'foodPrice':object.get("foodPrice")});
-                    //alert(object.id + ' - ' + object.get('playerName'));
-                }
-            },
-            error: function(){
-                alert("Error: " + error.code + " " + error.message);
-            }
+            });
+            $scope.AddFood.hide(); 
+          };//END CREATE
+        } else {
+          var alertPopup = $ionicPopup.alert({
+            title: 'Sign up ERROR'
           });
-        $scope.$broadcast('scroll.refreshComplete');
-        // $scope.$apply()
+          return alertPopup;
+        }
       }
-      $ionicModal.fromTemplateUrl('templates/modalA.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-      }).then(function(modal) {
-        $scope.modalA = modal;
-      });
-      
-          
-       $scope.createItem = function(u) {        
-        var FoodItem = Parse.Object.extend("FoodItem");
-        var foodItem= new FoodItem();
-        var user=Parse.User.current();
-            foodItem.set("foodName",$("#foodName").val());
-        var str1= $("#foodPrice").val();
-        foodItem.set("foodPrice", parseInt(str1) );
-        foodItem.set("user",user);
-        foodItem.save(null,{
-          success:function(foodItem){
-            // Execute any logic that should take place after the object is saved.
-            alert('New object created with objectId: ' +foodItem.id);
-            $rootScope.items.push({'foodName':$("#foodName").val(),'foodPrice':$("#foodPrice").val()});
-           
-          },
-          error:function(foodItem,error){
-             // Execute any logic that should take place if the save fails.
-            // error is a Parse.Error with an error code and message.
-            alert('Failed to create new object, with error code: ' + error.message);
-          }
 
-        });
-        $scope.modalA.hide();
-       
-      };
-       
-       
-         
-        // $scope.items.push({ name: u.foodName,
-        //                      price: u.price  });
-         //$scope.modalA.hide();
->>>>>>> origin/master
-  }
+      // EDIT ITEM
+      $scope.EditItem = function (isValid) {
+
+        if (isValid) {
+           $scope.EditItem = function(u) {        
+            var FoodItem = Parse.Object.extend("FoodItem");
+            var foodItem= new FoodItem();
+            var user=Parse.User.current();
+                foodItem.set("foodName",$("#foodName").val());
+            var str1= $("#foodPrice").val();
+            foodItem.set("foodPrice", parseInt(str1) );
+            foodItem.set("user",user);
+            foodItem.save(null,{
+              success:function(foodItem){
+                // Execute any logic that should take place after the object is saved.
+               // alert('New object created with objectId: ' +foodItem.id);
+                $rootScope.items.push({'foodName':$("#foodName").val(),'foodPrice':$("#foodPrice").val()});
+                var alertPopup = $ionicPopup.alert({
+                  title: 'Edit Item  SUCCESSFULLY'
+                  });
+              },
+              error:function(foodItem,error){
+                 // Execute any logic that should take place if the save fails.
+                // error is a Parse.Error with an error code and message.
+                alert('Failed to create new object, with error code: ' + error.message);
+              }
+
+            });
+            $scope.EditFood.hide(); 
+          };//END CREATE
+        } else {
+          var alertPopup = $ionicPopup.alert({
+            title: 'Sign up ERROR'
+          });
+          return alertPopup;
+        }
+      }
+      // DELETE ITEM
+
+}
+     // $scope.deleteItem(id){}

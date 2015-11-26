@@ -8,39 +8,72 @@
     <h1 class="title">Menu</h1>
 
 </ion-header-bar>
-<ion-content> 
+<ion-content style = "background-color:#484746;"> 
   <ion-refresher
     pulling-text="Pull to refresh..."
     on-refresh="doRefresh()">
   </ion-refresher>
   <div class="card list">
     <div class="item item-divider" id="itemheader">Food Name <span class="item-note"id="itemheader"> Price</span></div>
-    <div class="item" ng-repeat="item in items" ng-click="deleteItem()"> 
+    <div class="item item-food" ng-repeat="item in items" ng-click="EditFood()" id="food-{{$index +1 }}"> 
       {{item.foodName}} <span class="item-note"> {{item.foodPrice}}</span>
     </div>
-      <div class="item ion-plus-round" ng-click="modalA.show()">Add Item</div>
+      <div class="item ion-plus-round" ng-click="AddFood.show()">Add Item</div>
+      <div class="item ion-edit" ng-click="EditFood.show()">Edit Item</div>
+      <div class="item ion-close-circled" ng-click="DeleteFood.show()">Delete Item</div>
   </div> 
 
 </ion-content>
 
 
-<script id="templates/modalA.html" type="text/ng-template">
-      <ion-modal-view>
-        <ion-header-bar class="bar bar-header bar-positive" id="modalA">
-          <h1 class="title">New Food Item</h1>
-          <button class="button button-clear button-primary ion-close-round"style="padding-right:5px" ng-click="modalA.hide()" ></button>
+<script id="templates/AddFood.html" type="text/ng-template">
+      <ion-modal-view  style = "background-color:#484746;">
+        <ion-header-bar class="bar bar-header bar-positive" id="AddFood">
+          <h1 class="title" style="left:17px;">New Food Item</h1>
+          <button class="button button-clear button-primary ion-close-round"style="padding-right:5px; padding-bottom: 3px;" ng-click="AddFood.hide()" ></button>
         </ion-header-bar>
         <ion-content class="padding" >
-          <div class="list">
+          <div class="list menu-new-food">
+
             <label class="item item-input">
-              <span class="input-label">Food Name</span>
-              <input ng-model="newItem.foodName" id="foodName"type="text">
+              <span class="input-label" style=" margin: -5px; background-color: #F77B55; text-align: center; color: white; width: 32%; padding-top: 8px; padding-bottom: 4px;"> <img src="img/icon_food.png"></img> </span>
+              <input ng-model="newItem.foodName" id="foodName"type="text" style="padding-left: 10px;" placeholder="Food Name" required>
             </label>
+
             <label class="item item-input">
-              <span class="input-label">Price</span>
-              <input ng-model="newItem.foodPrice" id="foodPrice" type="text">
+              <span class="input-label" style="background-color: #F77B55; text-align: center; color: white;width: 30%; padding-bottom: 1px; padding-top: 4px;"><img src="img/icon-money.png"></img> </span>
+              <input ng-model="newItem.foodPrice" id="foodPrice" type="text"  style="padding-left: 10px;" placeholder="Price" required>
             </label>
-            <button class="button button-full button-positive" style="background-color:#f77b55;border:0" ng-click="createItem(newItem)">Create</button>
+
+            <button class="button button-full button-positive" style="background-color:#f77b55;border:0; width: 95%;; margin-top: 10px; border-radius: 0; float: right; margin-top: 0px; margin-right: 15px;" ng-click="createItem(newItem)">Create</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+    
+
+<script id="templates/EditFood.html" type="text/ng-template">
+      <ion-modal-view  style = "background-color:#484746;">
+        <ion-header-bar class="bar bar-header bar-positive" id="EditFood">
+          <h1 class="title" style="left:17px;">Edit Food Item</h1>
+          <button class="button button-clear button-primary ion-close-round"style="padding-right:5px; padding-bottom: 3px;" ng-click="EditFood.hide()" ></button>
+        </ion-header-bar>
+        <ion-content class="padding" >
+          <div class="list menu-edit-food">
+
+            <label class="item item-input">
+              <span class="input-label" style=" margin: -5px; background-color: #F77B55; text-align: center; color: white; width: 32%; padding-top: 8px; padding-bottom: 4px;"> <img src="img/icon_food.png"></img> </span>
+              <input ng-model="editItem.foodName" id="foodName" type="text" style="padding-left: 10px;" placeholder="Food Name" value="{{item.foodName}}" required>
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label" style="background-color: #F77B55; text-align: center; color: white;width: 30%; padding-bottom: 1px; padding-top: 4px;"><img src="img/icon-money.png"></img> </span>
+              <input ng-model="editItem.foodPrice" id="foodPrice" type="text"  style="padding-left: 10px;" placeholder="Price" value="{{item.foodPrice}}" required>
+            </label>
+            
+            <button class="button button-full button-positive" style="background-color:#f77b55;border:0; width: 95%;; margin-top: 10px; border-radius: 0; float: left; margin-top: 0px; margin-right: 15px;" ng-click="EditItem(editItem)">OK</button>
+
+            <button class="button button-full button-positive" style="background-color:#f77b55;border:0; width: 95%;; margin-top: 10px; border-radius: 0; float: right; margin-top: 0px; margin-right: 15px;" ng-click="EditFood.hide()">CANCEL</button>
           </div>
         </ion-content>
       </ion-modal-view>

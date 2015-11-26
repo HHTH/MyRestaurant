@@ -9210,3 +9210,23 @@ a.button {
 
 .account .list {
   margin-top: 102px; }
+
+/**************** Menu ***************/
+/****************************************/
+.bar {
+  height: 50px !important; }
+
+.menu-new-food {
+  padding-left: 17px;
+  margin-top: 15px; }
+  .menu-new-food .item {
+    border-style: none; }
+  .menu-new-food .item-input {
+    margin-top: 10px;
+    margin-bottom: 13px;
+    padding: 0;
+    width: 95%; }
+    .menu-new-food .item-input img {
+      width: 50%; }
+  .menu-new-food .button {
+    min-height: 42px; }
