@@ -6,24 +6,36 @@
   bottom: 50% !important;
   left: 10% !important;
   overflow: visible !important;
-  min-height: 262px !important;
+  min-height: 262px;
   width: 80% !important;
 
 }
-<<<<<<< HEAD
+
 #AddFood {
-=======
-#modalAddFood {
->>>>>>> origin/master
     border-color:#f77b55;
     background-color: #f77b55;
-    background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);
     color: #fff;
+}
+
+#AddFood:active {
+    border-color: rgba(247, 123, 85, 0.71) !important;
+    background-color: rgba(247, 123, 85, 0.71) !important;
+}
+
+#EditFood {
+    border-color:#f77b55;
+    background-color: #f77b55;
+    color: #fff;
+}
+
+#EditFood:active {
+    border-color: rgba(247, 123, 85, 0.71) !important;
+    background-color: rgba(247, 123, 85, 0.71) !important;
 }
 /*CSS menu*/
 #itemheader.item-divider {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 15px;
+    padding-bottom: 13px;
     min-height: 30px;
     background-color:#f77b55;
     color: #FFF;

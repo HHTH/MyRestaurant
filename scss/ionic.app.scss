@@ -172,6 +172,41 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	img {
 		width: 100%;
 	}
+	#home-menu {
+		border-right: 2px solid rgba(119, 116, 116, 0.1); 
+		border-bottom: 2px solid rgba(119, 116, 116, 0.1);
+	}
+	#home-menu:active {
+		background-color: #f77b55;
+	}
+	#home-table {
+		border-bottom: 2px solid rgba(119, 116, 116, 0.1);
+	}
+	#home-table:active {
+		background-color: #A8E9FB;
+	}
+	#home-order {
+		border-right: 2px solid rgba(119, 116, 116, 0.1); 
+		border-bottom: 2px solid rgba(119, 116, 116, 0.1);
+	}
+	#home-order:active {
+		background-color: #ffd47b;
+	}
+	#home-addstaff {
+		border-bottom: 2px solid rgba(119, 116, 116, 0.1);
+	}
+	#home-addstaff:active {
+		background-color: #f77b55;
+	}
+	#home-print {
+		border-right: 2px solid rgba(119, 116, 116, 0.1);
+	}
+	#home-print:active {
+		background-color: #A8E9FB;
+	}
+	#home-about:active {
+		background-color: #ffd47b;
+	}
 }
 
 .item-avatar {
@@ -197,6 +232,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	}
 }
 
+
+
 /**************** Menu ***************/
 /****************************************/
 
@@ -204,7 +241,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	height: 50px !important;
 }
 
-.menu-new-food {
+/***************** create - edit food ***************/
+
+.menu-new-food, 
+.menu-edit-food {
     padding-left: 17px;
     margin-top: 15px;
 	.item {
@@ -220,7 +260,35 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		}
 	}
 	.button {
-	min-height: 42px;
+		min-height: 42px;
 	}
+	.edit-ok {
+		background-color:#f77b55;
+		border:0; width: 43%;
+		margin-top: 10px; border-radius: 0;
+		float: left; 
+		margin-top: 0px;
+		margin-right: 15px;
+	}
+	.edit-cancel {
+		background-color:#f77b55;
+		border:0; width: 43%;
+		margin-top: 10px; border-radius: 0; 
+		float: right; 
+		margin-top: 0px; 
+		margin-right: 15px;
+	}
+}
 
+.menu-change-detail-food {
+	.item {
+		padding: 0;
+	    background-color: rgba(255, 255, 255, 0);
+	    border: none;
+	    border: none;
+	}
+	button {
+		background-color:#f77b55 !important;
+		border: none;
+	}
 }
