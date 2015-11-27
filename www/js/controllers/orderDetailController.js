@@ -1,5 +1,5 @@
 app.controller('orderDetailController',OrderDetailController);
-	function OrderDetailController(someService,$routeParams,$ionicPopup,$location,$scope,$rootScope) {
+	function OrderDetailController($routeParams,$ionicPopup,$location,$scope,$rootScope) {
 		$scope.tableId=$rootScope.tableId;
 		$rootScope.tableId=$routeParams.tableId;
 		
