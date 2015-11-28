@@ -9301,3 +9301,77 @@ a.button {
 .menu-change-detail-food button {
   background-color: #f77b55 !important;
   border: none; }
+
+.modal {
+  top: 20% !important;
+  right: 10% !important;
+  bottom: 50% !important;
+  left: 10% !important;
+  overflow: visible !important;
+  min-height: 262px;
+  width: 80% !important; }
+
+#AddFood {
+  border-color: #f77b55;
+  background-color: #f77b55;
+  color: #fff; }
+
+#AddFood:active {
+  border-color: rgba(247, 123, 85, 0.71) !important;
+  background-color: rgba(247, 123, 85, 0.71) !important; }
+
+#EditFood {
+  border-color: #f77b55;
+  background-color: #f77b55;
+  color: #fff; }
+
+#EditFood:active {
+  border-color: rgba(247, 123, 85, 0.71) !important;
+  background-color: rgba(247, 123, 85, 0.71) !important; }
+
+/*CSS menu*/
+#itemheader.item-divider {
+  padding-top: 15px;
+  padding-bottom: 13px;
+  min-height: 30px;
+  background-color: #f77b55;
+  color: #FFF;
+  font-weight: 500; }
+
+#itemheader.item-note {
+  float: right;
+  color: #FFF;
+  font-size: 15px; }
+
+@media (max-width: 680px) {
+  .active .modal-backdrop-bg {
+    opacity: .6;
+    transition: opacity 300ms ease-in-out;
+    background-color: #000; } }
+
+/**************** Orderdetails ***************/
+/****************************************/
+.orderdetalis-wrap {
+  float: left;
+  width: 60%; }
+  .orderdetalis-wrap .orderdetails-item {
+    padding: 2%;
+    margin: 10px 0px 0px 10px !important;
+    float: left;
+    width: 40%;
+    height: 60px;
+    background-color: #A8E9FB;
+    position: relative; }
+    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodName {
+      float: left;
+      width: 60%;
+      text-align: center; }
+    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice {
+      float: right;
+      z-index: 1; }
+      .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice img {
+        width: 45px;
+        position: absolute;
+        height: 45px;
+        bottom: 0px;
+        right: -4px; }
