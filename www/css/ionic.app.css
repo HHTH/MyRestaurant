@@ -9351,27 +9351,49 @@ a.button {
 
 /**************** Orderdetails ***************/
 /****************************************/
-.orderdetalis-wrap {
+.orderdetalis-wrap .orderdetails-item,
+.orderdetails-table .orderdetails-item {
+  padding: 2%;
+  margin: 5px 0px 5px 10px !important;
   float: left;
-  width: 60%; }
-  .orderdetalis-wrap .orderdetails-item {
-    padding: 2%;
-    margin: 10px 0px 0px 10px !important;
+  width: 40%;
+  height: 60px;
+  background-color: #A8E9FB;
+  position: relative; }
+  .orderdetalis-wrap .orderdetails-item .orderdetalis-foodName,
+  .orderdetails-table .orderdetails-item .orderdetalis-foodName {
     float: left;
-    width: 40%;
-    height: 60px;
-    background-color: #A8E9FB;
-    position: relative; }
-    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodName {
-      float: left;
-      width: 60%;
-      text-align: center; }
-    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice {
-      float: right;
-      z-index: 1; }
-      .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice img {
-        width: 45px;
-        position: absolute;
-        height: 45px;
-        bottom: 0px;
-        right: -4px; }
+    width: 60%;
+    text-align: center; }
+  .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice,
+  .orderdetails-table .orderdetails-item .orderdetalis-foodPrice {
+    float: right;
+    z-index: 1; }
+    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice img,
+    .orderdetails-table .orderdetails-item .orderdetalis-foodPrice img {
+      width: 45px;
+      position: absolute;
+      height: 45px;
+      bottom: 0px;
+      right: -4px; }
+
+.orderdetalis-wrap {
+  background-color: red;
+  float: left;
+  width: 60%;
+  padding-top: 5px; }
+
+.orderdetails-table {
+  float: left;
+  width: 40%; }
+  .orderdetails-table .orderdetails-item {
+    width: 60% !important;
+    margin: 5px 0px 5px 33px !important; }
+
+.left-buttons button {
+  border: none; }
+
+.left-buttons .ion-chevron-left {
+  font-size: 20px !important;
+  margin-top: 2px;
+  border: none; }

@@ -350,13 +350,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 /**************** Orderdetails ***************/
 /****************************************/
 
-.orderdetalis-wrap {
-	float: left; 
-	width: 60%;
+.orderdetalis-wrap,
+.orderdetails-table {
 	.orderdetails-item {
 		padding:2%; 
-		margin: 10px 0px 0px 10px !important; 
-		float: left; width: 40%;  
+		margin: 5px 0px 5px 10px !important; 
+		float: left; 
+		width: 40%;  
 		height: 60px; 
 		background-color: #A8E9FB; 
 		position: relative;
@@ -377,4 +377,32 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 			}
 		}
 	}
+}
+
+.orderdetalis-wrap{
+	background-color: red;
+	float: left; 
+	width: 60%;
+	padding-top: 5px;
+}
+
+.orderdetails-table {
+	
+	float: left; 
+	width: 40%;
+	.orderdetails-item {
+		width: 60% !important;  
+		margin: 5px 0px 5px 33px !important; 
+	}
+}
+
+.left-buttons{
+	button {
+		border: none;
+	}
+	.ion-chevron-left {
+		font-size: 20px !important;
+    	margin-top: 2px;
+    	border: none;
+	}	
 }

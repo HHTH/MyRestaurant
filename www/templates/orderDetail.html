@@ -2,25 +2,43 @@
 <ion-header-bar class="bar-calm">
 	<div class="buttons button-left header-item">
 		<span class="left-buttons">
-        <a class="button button-icon button-calm ion-chevron-left" href="#table"></a>
+        <a class="button ion-chevron-left" href="#table"></a>
         </span>
     </div>
     <h1 class="title">Order for table {{tableId}}</h1>
-    
+    <div class="search-wrap" style="margin-left: 81%; font-size: 21px; margin-top: 8px;">
+      <div class="search" id="show-search" style="display:none;">
+        <input ng-model="query[queryBy]"/>
+      </div>
+      <span class="ion-search"  id="search-orderdetails"></span>
+    </div>
 </ion-header-bar>
-<ion-content>
-<input ng-model="query[queryBy]"/>
-	<div class="orderdetalis-wrap" >
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in items|filter:query"  >
-     
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodPrice}}</span>
-  
-  </div> 
+<ion-content style="padding: 10px; background-color: white;">
 
-</div>
+	<div class="orderdetalis-wrap" >
+    <div class="card clear-fix orderdetails-item" ng-repeat="item in items|filter:query"ng-click="addToList(item)" >
+       <span class="orderdetalis-foodName" > {{item.foodName}} </span>
+        <span class="item-note orderdetalis-foodPrice" style=""> {{item.foodPrice}}</span>
+    </div>
+  </div>
+
+  <div class="orderdetails-table">
+    <div class=" card orderdetails-item" ng-repeat="item in myCartItems">
+       <span class="orderdetalis-foodName" > {{item.foodName}} </span>
+       <span class="item-note orderdetalis-foodPrice" style=""> {{item.foodPrice}}</span>
+    </div> 
+  </div>
 <!-- <div ng-repeat="item in items |filter:query">
   {{item.foodName}}
 </div> -->
 </ion-content>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#show-search").hide();
+        $("#search-orderdetails").click(function(){
+        $("#show-search").show(3000);
+    });
+
+    
+});
+</script>
