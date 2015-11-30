@@ -55,7 +55,10 @@ app.config(['$routeProvider',
           templateUrl: 'templates/orderDetail.html',
           controller: 'orderDetailController'
         })
-
+        .when('/order', {
+          templateUrl: 'templates/order.html',
+          controller: 'orderController'
+        })
         
         .otherwise({
           redirectTo: '/first'

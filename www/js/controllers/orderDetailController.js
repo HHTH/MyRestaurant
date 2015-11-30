@@ -1,20 +1,7 @@
-// app.controller('orderDetailController',OrderDetailController);
-// 	function OrderDetailController($routeParams,$ionicPopup,$location,$scope,$rootScope) {
-// 		$scope.tableId=$rootScope.tableId;
-// 		$rootScope.tableId=$routeParams.tableId;
-		
-
-// 		$scope.items=$rootScope.items;
-// 		$scope.query={}
-// 		$scope.queryBy='$';
-// 		$scope.orderProp="foodName";
-// 	}
-
 app.controller('orderDetailController',OrderDetailController);
 	function OrderDetailController($routeParams,$ionicPopup,$location,$scope,$rootScope) {
 		$scope.tableId=$rootScope.tableId;
 		$rootScope.tableId=$routeParams.tableId;
-		
 		
 		//$scope.items=$rootScope.items;
 		$rootScope.items = [];
@@ -39,30 +26,29 @@ app.controller('orderDetailController',OrderDetailController);
 		$scope.query={}
 		$scope.queryBy='$';
 		$scope.orderProp="foodName";
+   
+    $rootScope.myCartItems = [];
 
-		$scope.addToOrder=function(){
-			$scope.select=[];
 
-		};
-	
-
-  //   var Order=Parse.Object.extend("Order");
-  //   var Order =new Order();
-  // //  var OrderDetail=Parse.Object.extend("OrderDetail");
-  //   var relation=Order.relation("OrderDetail");
-  //   relation.add(FoodItem);
-  //   Order.save();
-   $scope.myCartItems = [];
 		$scope.addToList=function(item){
-       $scope.myCartItems.push(item);
-
-		};
-
-  $("#show-search").hide();
-      $("#search-orderdetails").click(function(){
-        $("#show-search").show(500);    
-      });
-      $("#hide-search").click(function(){
-        $("#show-search").hide(1000);  
-      });  
+      //item = angular.copy(item);
+      var str= $("#foodQuantity").val();
+      
+      $rootScope.myCartItems.push({foodName:item.foodName,foodPrice:item.foodPrice,foodQuantity:parseInt(str)});
+      console.log($scope.myCartItems[0]);
+      
+	}
+  $scope.sendOrder=function(){
+        console.log($scope.myCartItems[0]);
+        localStorage.setItem("order"+$scope.tableId, JSON.stringify($rootScope.myCartItems));
+        var Order=Parse.Object.extend("Order");
+        var order =new Order();
+        var relation=order.relation("selected");
+        for (var i=0; i< $rootScope.myCartItems.length;i++){
+        relation.add($rootScope.myCartItems[i].foodName);
+        }// đoạn này 
+        order.save(); 
+      }
+  
 }
+
