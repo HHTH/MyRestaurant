@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <div ng-model="table">order for table {{tableId}}</div>
 <ion-header-bar class="bar-calm">
 	<div class="buttons button-left header-item">
@@ -6,12 +7,22 @@
         </span>
     </div>
     <h1 class="title">Order for table {{tableId}}</h1>
-    <div class="search-wrap" style="margin-left: 81%; font-size: 21px; margin-top: 8px;">
-      <div class="search" id="show-search" style="display:none;">
-        <input ng-model="query[queryBy]"/>
-      </div>
-      <span class="ion-search"  id="search-orderdetails"></span>
+    <div class="search-wrap" style="margin-left: 81%; font-size: 21px; margin-top: 8px;"> 
+      <span class="ion-search"  id="search-orderdetails" style="position: absolute;"></span>
     </div>
+
+<div class="bar bar-header item-input-inset" id="show-search" style="    top: -5px;
+    border: none;
+    display: flex;
+    background-color: transparent;
+    margin-left: -300px;">
+  <label class="item-input-wrapper" id="hide-search-wrap" style="background-color:white;">
+    <i class="icon ion-search" id="hide-search" style="color:#11C1F3; font-size: 20px;"></i>
+    <input type="search" placeholder="Search" ng-model="query[queryBy]">
+  </label>
+ 
+</div>
+
 </ion-header-bar>
 <ion-content style="padding: 10px; background-color: white;">
 
@@ -32,13 +43,3 @@
   {{item.foodName}}
 </div> -->
 </ion-content>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("#show-search").hide();
-        $("#search-orderdetails").click(function(){
-        $("#show-search").show(3000);
-    });
-
-    
-});
-</script>

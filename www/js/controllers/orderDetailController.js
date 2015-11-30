@@ -44,7 +44,7 @@ app.controller('orderDetailController',OrderDetailController);
 			$scope.select=[];
 
 		};
-	}
+	
 
   //   var Order=Parse.Object.extend("Order");
   //   var Order =new Order();
@@ -58,4 +58,11 @@ app.controller('orderDetailController',OrderDetailController);
 
 		};
 
-	}
+  $("#show-search").hide();
+      $("#search-orderdetails").click(function(){
+        $("#show-search").show(500);    
+      });
+      $("#hide-search").click(function(){
+        $("#show-search").hide(1000);  
+      });  
+}
