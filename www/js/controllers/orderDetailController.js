@@ -50,5 +50,11 @@ app.controller('orderDetailController',OrderDetailController);
         order.save(); 
       }
   
+$("#show-search").hide();
+      $("#search-orderdetails").click(function(){
+        $("#show-search").show(500);    
+      });
+      $("#hide-search").click(function(){
+        $("#show-search").hide(1000);  
+      });  
 }
-

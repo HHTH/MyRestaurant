@@ -6,12 +6,21 @@
         </span>
     </div>
     <h1 class="title">Order for table {{tableId}}</h1>
-    <div>
-      <div class="search" style="display: none;">
-        <input ng-model="query[queryBy]"/>
-      </div>
-      <span class="ion-search"></span>
+    <div class="search-wrap" style="margin-left: 81%; font-size: 21px; margin-top: 8px;"> 
+      <span class="ion-search"  id="search-orderdetails" style="position: absolute;"></span>
     </div>
+
+<div class="bar bar-header item-input-inset" id="show-search" style="    top: -5px;
+    border: none;
+    display: flex;
+    background-color: transparent;
+    margin-left: -300px;">
+  <label class="item-input-wrapper" id="hide-search-wrap" style="background-color:white;">
+    <i class="icon ion-search" id="hide-search" style="color:#11C1F3; font-size: 20px;"></i>
+    <input type="search" placeholder="Search" ng-model="query[queryBy]">
+  </label>
+ 
+</div>
 </ion-header-bar>
 <ion-content>
 
