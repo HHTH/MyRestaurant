@@ -9,7 +9,7 @@ app.controller('menuController',modalController);
           var query= new Parse.Query(FoodItem);
           query.find({
             success:function(results){
-                $scope.$apply(function(){
+              $scope.$apply(function(){
                 for (var i = 0; i < results.length; i++) {
                     var object = results[i];
                      // $scope.doRefresh=function(){

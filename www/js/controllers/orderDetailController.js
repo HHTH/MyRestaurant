@@ -40,6 +40,12 @@ app.controller('orderDetailController',OrderDetailController);
 		$scope.queryBy='$';
 		$scope.orderProp="foodName";
 
+		$scope.addToOrder=function(){
+			$scope.select=[];
+
+		};
+	}
+
   //   var Order=Parse.Object.extend("Order");
   //   var Order =new Order();
   // //  var OrderDetail=Parse.Object.extend("OrderDetail");
