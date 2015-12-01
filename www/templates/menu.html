@@ -15,12 +15,19 @@
   </ion-refresher>
   <div class="card list">
     <div class="item item-divider" id="itemheader">Food Name <span class="item-note"id="itemheader"> Price</span></div>
-    <div class="item item-food" ng-repeat="item in items" ng-click="ChangeDetails.show()" id="food-{{$index +1 }}"> 
-      {{item.foodName}} <span class="item-note"> {{item.foodPrice}}</span>
+    <div class="item item-food" ng-repeat="item in items"  id="food-{{$index +1 }}"> 
+      {{item.foodName}} <span class="item-note" ng-click="editing=true"id="foodPrice" ng-hide="editing"> {{item.foodPrice}}</span>
+        <span class="item-note" ng-show="editing"><input id="nameFix"ng-blur="editing = false" type="text" ng-model="item.foodPrice"/>
+          <a data-ng-click="editing=false"></a>
+          <!-- <button ng-click="saveEdit()">save edit</button> -->
+      </span>
+
+
+      <button ng-click="remove(item)">Remove</button>
     </div>
       <div class="item ion-plus-round" ng-click="AddFood.show()">Add Item</div>
-      <!-- <div class="item ion-edit" ng-click="EditFood.show()">Edit Item</div> -->
-      <!-- <div class="item ion-close-circled" ng-click="DeleteFood.show()">Delete Item</div> -->
+      <div class="item ion-edit" >Edit Item</div>
+      <div class="item ion-close-circled" ng-click="DeleteFood.show()">Delete Item</div>
   </div> 
 
 </ion-content>
