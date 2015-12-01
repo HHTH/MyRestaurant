@@ -44,6 +44,7 @@
                     <input type="number" id="foodQuantity" ng-model="item.foodQuantity">
         </div>
     <button ng-click="sendOrder()">SEND</button>
+    <div> Total: {{ cartSum() }}</div>
   </div>
 <!-- <div ng-repeat="item in items |filter:query">
   {{item.foodName}}

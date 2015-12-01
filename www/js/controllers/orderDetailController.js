@@ -27,17 +27,29 @@ app.controller('orderDetailController',OrderDetailController);
 		$scope.queryBy='$';
 		$scope.orderProp="foodName";
    
-    $rootScope.myCartItems = [];
+    $rootScope.myCartItems = [
+
+    ];
 
 
 		$scope.addToList=function(item){
       //item = angular.copy(item);
+
       var str= $("#foodQuantity").val();
       
       $rootScope.myCartItems.push({foodName:item.foodName,foodPrice:item.foodPrice,foodQuantity:parseInt(str)});
       console.log($scope.myCartItems[0]);
       
 	}
+  $scope.cartSum = function(){
+            var sum =0;
+            $scope.myCartItems.forEach(function(item){
+                sum += item.foodQuantity * item.foodPrice;
+            });
+
+            return sum;
+        }
+
   $scope.sendOrder=function(){
         console.log($scope.myCartItems[0]);
         localStorage.setItem("order"+$scope.tableId, JSON.stringify($rootScope.myCartItems));
@@ -48,13 +60,15 @@ app.controller('orderDetailController',OrderDetailController);
         relation.add($rootScope.myCartItems[i].foodName);
         }// đoạn này 
         order.save(); 
+      // $location.path("/table");
       }
-  
-$("#show-search").hide();
+  $("#show-search").hide();
       $("#search-orderdetails").click(function(){
         $("#show-search").show(500);    
       });
       $("#hide-search").click(function(){
         $("#show-search").hide(1000);  
-      });  
+      }); 
+  
 }
+
