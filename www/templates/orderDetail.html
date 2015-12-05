@@ -34,7 +34,7 @@
   </div> 
 
 </div>
-  <div class="orderdetails-table" style="float: left; width: 40%;">
+  <!-- <div class="orderdetails-table" style="float: left; width: 40%;"> -->
   <div> My order</div>
 
         <div ng-repeat="item in myCartItems track by $index ">
@@ -45,8 +45,6 @@
         </div>
     <button ng-click="sendOrder()">SEND</button>
     <div> Total: {{ cartSum() }}</div>
-  </div>
-<!-- <div ng-repeat="item in items |filter:query">
-  {{item.foodName}}
-</div> -->
+ <!--  </div> -->
+
 </ion-content>

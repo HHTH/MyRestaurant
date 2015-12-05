@@ -1,2 +1,24 @@
 
 /* style */
+/*CSS for orders*/
+.header-order-h4 {
+	text-align: center;
+	padding: 5px;
+}
+.card, .list-inset {
+    overflow: hidden;
+    margin: 20px 5px;
+    border-radius: 2px;
+    background-color: #ffd47b;
+}
+#test {
+	padding: 4px !important;
+	font-size: 13px;
+}
+#order {
+	background-color:#f2f2f2 ;
+}
+/*#order-bar {
+	background-color: #fcc465
+}*/
+/*END CSS for orders*/

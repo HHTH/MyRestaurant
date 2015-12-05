@@ -1,10 +1,10 @@
 app.controller('orderDetailController',OrderDetailController);
-	function OrderDetailController($routeParams,$ionicPopup,$location,$scope,$rootScope) {
-		$scope.tableId=$rootScope.tableId;
-		$rootScope.tableId=$routeParams.tableId;
-		
-		//$scope.items=$rootScope.items;
-		$rootScope.items = [];
+  function OrderDetailController($routeParams,$ionicPopup,$location,$scope,$rootScope) {
+    $scope.tableId=$rootScope.tableId;
+    $rootScope.tableId=$routeParams.tableId;
+    
+    //$scope.items=$rootScope.items;
+    $rootScope.items = [];
 
       var FoodItem=Parse.Object.extend("FoodItem");
           var query= new Parse.Query(FoodItem);
@@ -23,16 +23,16 @@ app.controller('orderDetailController',OrderDetailController);
                 alert("Error: " + error.code + " " + error.message);
             }
           });
-		$scope.query={}
-		$scope.queryBy='$';
-		$scope.orderProp="foodName";
+    $scope.query={}
+    $scope.queryBy='$';
+    $scope.orderProp="foodName";
    
     $rootScope.myCartItems = [
 
     ];
 
 
-		$scope.addToList=function(item){
+    $scope.addToList=function(item){
       //item = angular.copy(item);
 
       var str= $("#foodQuantity").val();
@@ -40,7 +40,7 @@ app.controller('orderDetailController',OrderDetailController);
       $rootScope.myCartItems.push({foodName:item.foodName,foodPrice:item.foodPrice,foodQuantity:parseInt(str)});
       console.log($scope.myCartItems[0]);
       
-	}
+  }
   $scope.cartSum = function(){
             var sum =0;
             $scope.myCartItems.forEach(function(item){
@@ -51,24 +51,53 @@ app.controller('orderDetailController',OrderDetailController);
         }
 
   $scope.sendOrder=function(){
-        console.log($scope.myCartItems[0]);
+        console.log($scope.myCartItems[1]);
         localStorage.setItem("order"+$scope.tableId, JSON.stringify($rootScope.myCartItems));
         var Order=Parse.Object.extend("Order");
         var order =new Order();
-        var relation=order.relation("selected");
-        for (var i=0; i< $rootScope.myCartItems.length;i++){
-        relation.add($rootScope.myCartItems[i].foodName);
-        }// đoạn này 
-        order.save(); 
-      // $location.path("/table");
+     
+        var MyCartItems = Parse.Object.extend("MyCartItems");
+        var list = [];
+        var count = $rootScope.myCartItems.length;
+          if(count > 0){
+            for (var i = 0; i < count; i++) {
+            var myCartItemObject = new MyCartItems();
+            myCartItemObject.set(JSON.parse(angular.toJson($rootScope.myCartItems[i])));
+            list.push(myCartItemObject);
+          }
+        var user=Parse.User.current();
+        order.set("user",user);
+        order.set("cartSum",$scope.cartSum());
+        Parse.Object.saveAll(list, {
+          success: function(objs) {
+              // objects have been saved...
+              var relation=order.relation("myCartItem");
+              relation.add(list);
+              order.save(); 
+              //order.add("myCartItem",myCartItemObject);
+
+              console.log("success");
+              var alertPopup = $ionicPopup.alert({
+                  title: 'SEND SUCCESSFULLY'
+                  });
+              $location.path("/table");
+          },
+          error: function(error) { 
+              // an error occurred...
+              console.log("error");
+          }
+          });
+          }
+      
       }
-  $("#show-search").hide();
-      $("#search-orderdetails").click(function(){
-        $("#show-search").show(500);    
-      });
-      $("#hide-search").click(function(){
-        $("#show-search").hide(1000);  
-      }); 
+      
+        $("#show-search").hide();
+          $("#search-orderdetails").click(function(){
+            $("#show-search").show(300);    
+          });
+          $("#hide-search").click(function(){
+            $("#show-search").hide(1000);  
+          }); 
   
 }
 

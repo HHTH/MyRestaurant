@@ -1,6 +1,6 @@
 đây là danh sách các order
 <div ng-model="table">order for table {{tableId}}</div>
-<ion-header-bar class="bar-calm">
+<ion-header-bar class="bar-calm" id="order-bar">
   <div class="buttons button-left header-item">
     <span class="left-buttons">
         <a class="button button-icon button-calm ion-chevron-left" href="#table" ></a>
@@ -12,69 +12,77 @@
 
 
 
-<ion-content>
-<div class="orderdetalis-wrap" >
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder1"  >
-     <span class="orderdetalis-foodName" > Table 1</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+<ion-content id="order">
+ <div class="row">
+
+  <div class="list card col col-30" >
+      <h4 class="header-order-h4">Table 1</h4>
+        <div class="item item-body"id="test"ng-repeat="item in myOrder1">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
+     
+
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder2"  >
-     <span class="orderdetalis-foodName" > Table 2</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+
+  <div class="list card col col-30" >
+      <h4 class="header-order-h4">Table 2</h4>
+        <div class="item item-body" id="test"ng-repeat="item in myOrder2">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder3"  >
-     <span class="orderdetalis-foodName" > Table 3</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+
+  <div class="list card col col-30" >
+      <h4 class="header-order-h4">Table 3</h4>
+        <div class="item item-body" id="test" ng-repeat="item in myOrder3">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
+
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder4"  >
-     <span class="orderdetalis-foodName" > Table 4</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+  
+</div>
+<div class="row">
+
+  <div class="list card" class="col-offset-33">
+      <h4 class="header-order-h4">Table 4</h4>
+        <div class="item item-body"id="test" ng-repeat="item in myOrder4">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
+     
+
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder5"  >
-     <span class="orderdetalis-foodName" > Table 5</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+
+  <div class="list card" class="col-offset-33">
+      <h4 class="header-order-h4">Table 5</h4>
+        <div class="item item-body"ng-repeat="item in myOrder5">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder6"  >
-     <span class="orderdetalis-foodName" > Table 6</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+
+  <div class="list card" class="col-offset-33">
+      <h4 class="header-order-h4">Table 6</h4>
+        <div class="item item-body"  ng-repeat="item in myOrder6">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
+
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder7"  >
-     <span class="orderdetalis-foodName" > Table 7</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+  
+</div>
+<div class="row">
+
+  <div class="list card" class="col-offset-33">
+      <h4 class="header-order-h4">Table 7</h4>
+        <div class="item item-body" ng-repeat="item in myOrder7">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
+     
+
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder8"  >
-     <span class="orderdetalis-foodName" > Table 8</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+
+  <div class="list card" class="col-offset-33" >
+      <h4 class="header-order-h4">Table 8</h4>
+        <div class="item item-body"ng-repeat="item in myOrder8">{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
   </div>
-  <div class="card clear-fix orderdetails-item" ng-repeat="item in myOrder9"  >
-     <span class="orderdetalis-foodName" > Table 9</span>
-     <span class="orderdetalis-foodName" > {{item.foodName}} </span>
-      <span class="item-note orderdetalis-foodPrice" style=""> 
-      <!-- <img src="img/bgr-price.png"  > -->{{item.foodQuantity}}</span>
- 
+
+  <div class="list card" class="col-offset-33" >
+      <h4 class="header-order-h4">Table 9</h4>
+        <div class="item item-body" ng-repeat="item in myOrder9" >{{item.foodName}} <span class="item-note"> {{item.foodQuantity}}</span>  
+        </div>     
+
   </div>
+  
+</div>
 </ion-content> 
