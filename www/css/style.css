@@ -18,6 +18,10 @@
 #order {
 	background-color:#f2f2f2 ;
 }
+#order-height{
+	/*min-height:100px;*/
+	position: relative;
+}
 /*#order-bar {
 	background-color: #fcc465
 }*/
