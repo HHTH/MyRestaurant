@@ -9396,4 +9396,5 @@ a.button {
 
 .staff .item-avatar img:first-child {
   left: 4px !important;
-  top: 16px !important; }
+  top: 16px !important;
+  background-color: #75d1e0; }
