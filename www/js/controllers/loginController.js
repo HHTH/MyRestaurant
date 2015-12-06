@@ -14,6 +14,7 @@ function loginController($ionicPopup,$scope,$location,$rootScope) {
                   if (currentUser) {
                   // do stuff with the user
                   $rootScope.username=currentUser.get("username");
+                  $rootScope.email=currentUser.get("email");
                   $location.path("/home");
                   } else {
                   // show the signup or login page
