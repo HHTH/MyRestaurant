@@ -63,6 +63,10 @@ app.config(['$routeProvider',
           templateUrl: 'templates/report.html',
           controller: 'reportController'
         })
+        .when('/print', {
+          templateUrl: 'templates/print.html',
+          //controller: 'reportController'
+        })
         
         
         .otherwise({
