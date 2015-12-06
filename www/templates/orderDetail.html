@@ -25,6 +25,13 @@
 <ion-content>
 
   <div class="orderdetalis-wrap" >
+   <p id="menu-order-left" style="    padding-bottom: 2px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+        margin-left: -10px;
+        color: black">Menu</p>
+     <hr>
   <div class="card clear-fix orderdetails-item" ng-repeat="item in items |filter:query "ng-click="addToList(item);"  >
      
      <span class="orderdetalis-foodName" > {{item.foodName}} </span>
@@ -35,7 +42,12 @@
 
 </div>
   <!-- <div class="orderdetails-table" style="float: left; width: 40%;"> -->
-  <div> My order</div>
+   <p id="order-right"  style="padding-bottom: 2px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+        margin-left: -10px;color: black">My order </p>
+    <hr>
 
         <div ng-repeat="item in myCartItems track by $index ">
                      <td>{{item.foodName}}</td>
