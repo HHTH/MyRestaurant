@@ -30,8 +30,8 @@
     font-size: 20px;
     padding-top: 10px;
         margin-left: -10px;
-        color: black">Menu</p>
-     <hr style=" width: 87%;">
+        color: white">Menu</p>
+     <hr style=" width: 87%;color:white">
   <div class="card clear-fix orderdetails-item" ng-repeat="item in items |filter:query "ng-click="addToList(item);"  >
      
      <span class="orderdetalis-foodName" > {{item.foodName}} </span><br>
@@ -40,6 +40,7 @@
   </div> 
 
 </div>
+<div>
   <div class="" style="    margin-bottom: 31px;">
    <p id="order-right"  style=" padding-bottom: 2px;
     text-align: center;
@@ -50,10 +51,10 @@
     <hr style="  width: 37%; margin-right: 10px;">
 <span style="float: left;
     margin-bottom: 10px;
-    margin-left: 5px;">Tên Món</span>
+    margin-left: 5px;">Food</span>
 <span style="    float: right;
     margin-right: 6px;
-    margin-bottom: 10px;" > Số Lượng </span>
+    margin-bottom: 10px;" >Quantity </span>
     </div>
         <div ng-repeat="item in myCartItems track by $index " style="    margin-top: 10px;
  ">
@@ -67,9 +68,10 @@ float: right;    margin-right: 10px;
       
         </div>
      <div style="margin-bottom: 10px;"> Total: {{ cartSum() }}</div>
-     <button ng-click="sendOrder()" style=" background-color: #E8E84C;
+     <button ng-click="sendOrder()" class=" icon-left ion-paper-airplane"style=" background-color: #f77b55;margin-right:5px;
       border: none;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">SEND</button>
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);width:145px;height:30px;color:white">SEND</button>
+       <!-- <button ng-click="sendOrder()" class="button button-small icon-right ion-paper-airplane button-energized" style="width:50px">SEND</button> -->
    
-
+</div>
 </ion-content>

@@ -9358,27 +9358,23 @@ a.button {
   float: left;
   width: 40%;
   height: 60px;
-  background-color: #A8E9FB;
+  background-color: white;
   position: relative; }
   .orderdetalis-wrap .orderdetails-item .orderdetalis-foodName,
   .orderdetails-table .orderdetails-item .orderdetalis-foodName {
     float: left;
-    width: 60%;
-    text-align: center; }
-  .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice,
-  .orderdetails-table .orderdetails-item .orderdetalis-foodPrice {
-    float: right;
-    z-index: 1; }
-    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice img,
-    .orderdetails-table .orderdetails-item .orderdetalis-foodPrice img {
-      width: 45px;
-      position: absolute;
-      height: 45px;
-      bottom: 0px;
-      right: -4px; }
+    /*width:60%; 
+			text-align:center;*/ }
+  .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice img,
+  .orderdetails-table .orderdetails-item .orderdetalis-foodPrice img {
+    width: 45px;
+    position: absolute;
+    height: 45px;
+    bottom: 0px;
+    right: -4px; }
 
 .orderdetalis-wrap {
-  background-color: red;
+  background-color: #f77b55;
   float: left;
   width: 60%;
   padding-top: 5px; }
