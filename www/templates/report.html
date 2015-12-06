@@ -9,7 +9,7 @@
 </ion-header-bar>
 <ion-content id="staff-content">
 
-<div class="list card" id="staff">
+<div class="list card staff" id="staff">
   <div class="item item-avatar">
     <img src="img/giraffy1.png">
     <h2>{{username || 'unknown error'}}</h2>
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="list card" id="staff" ng-repeat="user in users">
+<div class="list card staff" id="staff" ng-repeat="user in users">
  <div class="item item-avatar">
     <img src="img/giraffy1.png">
     <h2>{{user.userName}}</h2>

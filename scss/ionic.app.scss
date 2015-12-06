@@ -406,3 +406,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     	border: none;
 	}	
 }
+.staff {
+	.item-avatar {
+		img:first-child {
+			 left: 4px !important;
+			 top: 16px !important;
+		}
+	}
+}
