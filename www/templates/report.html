@@ -4,10 +4,65 @@
         <a class="button button-icon button-calm ion-chevron-left" href="#home" ></a>
         </span>
     </div>
-    <h1 class="title">Report</h1>
+    <h1 class="title">Staff</h1>
     
 </ion-header-bar>
-<ion-content>
+<ion-content id="staff-content">
 
-   <div ng-repeat="amount in Amount">{{amount.User}}</div>
+<div class="list card" id="staff">
+  <div class="item item-avatar">
+    <img src="img/giraffy1.png">
+    <h2>{{username || 'unknown error'}}</h2>
+    <p>{{email || 'unknown error'}}</p>
+    <p>Cook</p>
+  </div>
+</div>
+
+<div class="list card" id="staff" ng-repeat="user in users">
+ <div class="item item-avatar">
+    <img src="img/giraffy1.png">
+    <h2>{{user.userName}}</h2>
+    <p> {{user.email}}</p>
+    <p>Waiter</p>
+  </div>
+</div>
+
+
+<div class="list card" id="staff-button" ng-click="AddStaffModal.show()">
+  <p >ADD STAFF </p>
+
+</div>
+
+
 </ion-content>
+<script id="templates/AddStaffModal.html" type="text/ng-template">
+      <ion-modal-view  style = "background-color:#484746;">
+        <ion-header-bar class="bar bar-header bar-positive" id="AddFood">
+          <h1 class="title" style="left:17px;">New Staff Member</h1>
+          <button class="button button-clear button-primary ion-close-round"style="padding-right:5px; padding-bottom: 3px;" ng-click="AddStaffModal.hide()" ></button>
+        </ion-header-bar>
+        <ion-content class="padding" >
+          <div class="list menu-new-food">
+
+            <label class="item item-input">
+              <span class="input-label" style=" margin: -5px; background-color: #F77B55; text-align: center; color: white; width: 32%; padding-top: 8px; padding-bottom: 4px;"> <img src="img/name.png"></img>  </span>
+              <input ng-model="newStaff.staffName" id="staffName"type="text" style="padding-left: 10px;" placeholder="Staff Name" required>
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label" style="background-color: #F77B55; text-align: center; color: white;width: 30%; padding-bottom: 1px; padding-top: 4px;"><img src="img/mail.png"></img>  </span>
+              <input ng-model="newStaff.staffEmail" id="staffEmail" type="text"  style="padding-left: 10px;" placeholder="Email" required>
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label" style="background-color: #F77B55; text-align: center; color: white;width: 30%; padding-bottom: 1px; padding-top: 4px;"><img src="img/mail.png"></img>  </span>
+              <input ng-model="newStaff.staffPassword" id="staffPassword" type="text"  style="padding-left: 10px;" placeholder="Password" required>
+            </label>
+
+            <button class="button button-full button-positive" style="background-color:#f77b55;border:0; width: 95%;; margin-top: 10px; border-radius: 0; float: right; margin-top: 0px; margin-right: 15px;" ng-click="createStaff(newStaff)">Add Staff </button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+    
+
