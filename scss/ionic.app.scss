@@ -358,16 +358,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		float: left; 
 		width: 40%;  
 		height: 60px; 
-		background-color: #A8E9FB; 
+		background-color: #E8E84C;; 
 		position: relative;
 		.orderdetalis-foodName {
 			float:left; 
-			width:60%; 
-			text-align:center;
+			/*width:60%; 
+			text-align:center;*/
+
 		}
 		.orderdetalis-foodPrice {
-			float:right; 
-			z-index:1;
+			
 			img {
 				width: 45px; 
 				position: absolute;
@@ -380,7 +380,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .orderdetalis-wrap{
-	background-color: red;
+	/*background-color: red;*/
 	float: left; 
 	width: 60%;
 	padding-top: 5px;
