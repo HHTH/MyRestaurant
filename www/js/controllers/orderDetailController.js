@@ -68,6 +68,7 @@ app.controller('orderDetailController',OrderDetailController);
         var user=Parse.User.current();
         order.set("user",user);
         order.set("cartSum",$scope.cartSum());
+       // order.set("table",$rootScope.tableId);
         Parse.Object.saveAll(list, {
           success: function(objs) {
               // objects have been saved...

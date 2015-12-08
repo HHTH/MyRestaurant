@@ -9351,6 +9351,9 @@ a.button {
 
 /**************** Orderdetails ***************/
 /****************************************/
+#order .list:last-child.card {
+  margin-bottom: 20px; }
+
 .orderdetalis-wrap .orderdetails-item,
 .orderdetails-table .orderdetails-item {
   padding: 2%;
@@ -9376,15 +9379,20 @@ a.button {
 .orderdetalis-wrap {
   background-color: #f77b55;
   float: left;
-  width: 60%;
+  width: 58%;
   padding-top: 5px; }
-
-.orderdetails-table {
-  float: left;
-  width: 40%; }
-  .orderdetails-table .orderdetails-item {
-    width: 60% !important;
-    margin: 5px 0px 5px 33px !important; }
+  .orderdetalis-wrap .orderdetails-item {
+    padding: 2%;
+    margin: 5px 0px 5px 15px !important;
+    float: left;
+    width: 40%;
+    height: 60px;
+    background-color: white;
+    position: relative; }
+    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodName {
+      float: left; }
+    .orderdetalis-wrap .orderdetails-item .orderdetalis-foodPrice {
+      float: left; }
 
 .left-buttons button {
   border: none; }
@@ -9398,3 +9406,49 @@ a.button {
   left: 4px !important;
   top: 16px !important;
   background-color: #75d1e0; }
+
+/* style */
+/*CSS for orders*/
+.header-order-h4 {
+  text-align: center;
+  padding: 5px; }
+
+.card, .list-inset {
+  overflow: hidden;
+  margin: 20px 5px;
+  border-radius: 2px;
+  /*background-color: #ffd47b;*/ }
+
+#test {
+  padding: 4px !important;
+  font-size: 13px; }
+
+#order {
+  background-color: #ffd47b; }
+
+#order-height {
+  min-height: 100px;
+  position: relative; }
+
+/*#order-bar {
+	background-color: #fcc465
+}*/
+/*END CSS for orders*/
+/*CSS for STAFF*/
+#staff {
+  margin: 18px;
+  padding: 1px; }
+
+#staff-button {
+  margin: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  padding-bottom: 5px;
+  background-color: #f77b55;
+  color: white; }
+
+#staff-content {
+  background-color: #49505a; }
+
+/*END STAFF*/

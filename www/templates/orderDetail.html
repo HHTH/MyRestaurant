@@ -31,47 +31,53 @@
     padding-top: 10px;
         margin-left: -10px;
         color: white">Menu</p>
-     <hr style=" width: 87%;color:white">
+      <hr style=" width: 87%;border-color: white; border-top: 0;">
   <div class="card clear-fix orderdetails-item" ng-repeat="item in items |filter:query "ng-click="addToList(item);"  >
      
      <span class="orderdetalis-foodName" > {{item.foodName}} </span><br>
-      <span class="item-note orderdetalis-foodPrice" style="float: left;"> {{item.foodPrice}}</span>
+      <span class="item-note orderdetalis-foodPrice" style="float: right;"> {{item.foodPrice}}</span>
  
   </div> 
 
 </div>
 <div>
-  <div class="" style="    margin-bottom: 31px;">
+  <div class="" style="    margin-bottom: 40px;">
    <p id="order-right"  style=" padding-bottom: 2px;
     text-align: center;
     font-size: 20px;
     padding-top: 15px;
         margin-left: -10px;
-        color: black">My order </p>
-    <hr style="  width: 37%; margin-right: 10px;">
+        color: #F77B55">My order </p>
+    <hr style="  width: 37%; margin-right: 10px; border-color: #f77b55; border-top: 0;">
 <span style="float: left;
     margin-bottom: 10px;
-    margin-left: 5px;">Food</span>
+    margin-left: 5px; color: #F77B55">Food</span>
 <span style="    float: right;
     margin-right: 6px;
-    margin-bottom: 10px;" >Quantity </span>
+    margin-bottom: 10px; color: #F77B55" >Quantity </span>
     </div>
         <div ng-repeat="item in myCartItems track by $index " style="    margin-top: 10px;
  ">
-                     <span style="float:left ">{{item.foodName}}</span>
-                      <input type="number" id="foodQuantity" style="width: 34px;              
+                     <span style="float:left; padding-left: 5px;">{{item.foodName}}</span>
+                      <input type="number" id="foodQuantity" style="width: 36px;              
       height: 27px;padding-left: 4px;
 float: right;    margin-right: 10px;
       background-color: transparent;
-      border: 1px solid;" ng-model="item.foodQuantity"><br><br>
+      border: 1px solid #f77b55;" ng-model="item.foodQuantity"><br><br>
                      <span style="display:none">{{item.foodQuantity}}</span> 
       
         </div>
-     <div style="margin-bottom: 10px;"> Total: {{ cartSum() }}</div>
-     <button ng-click="sendOrder()" class=" icon-left ion-paper-airplane"style=" background-color: #f77b55;margin-right:5px;
+
+     <div style="margin-bottom: 10px;padding-left: 15px;color:#f77b55"> Total: {{ cartSum() }}</div>
+     <button ng-click="sendOrder()" class=" icon-left ion-paper-airplane" style=" 
+     background-color: #f77b55;
+     margin-right:5px;
       border: none;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);width:145px;height:30px;color:white">SEND</button>
-       <!-- <button ng-click="sendOrder()" class="button button-small icon-right ion-paper-airplane button-energized" style="width:50px">SEND</button> -->
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      width:145px;
+      height:30px;
+      color:white;
+      margin-left: 6px;">SEND</button>
    
 </div>
 </ion-content>
