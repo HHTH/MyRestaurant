@@ -63,7 +63,9 @@ app.controller('reportController',reportchartController);
       }
  	var User = Parse.Object.extend("User");
     var query= new Parse.Query(User);
-	 query.find({
+    //var currentUser = Parse.User.current();
+   // query.notContainedIn("_User", Parse.User.current());
+	  query.find({
 	    success:function(results) {
 	    	$scope.$apply(function(){
 	        console.log("Total: "+results.length);
@@ -78,4 +80,6 @@ app.controller('reportController',reportchartController);
 	        alert("Error when getting objects!");
 	    }
 	});
+   // query.notContainedIn("username",
+   //                   currentUser.get("username"));
   }
