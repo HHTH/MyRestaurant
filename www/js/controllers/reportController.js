@@ -64,7 +64,7 @@ app.controller('reportController',reportchartController);
  	var User = Parse.Object.extend("User");
     var query= new Parse.Query(User);
     //var currentUser = Parse.User.current();
-   // query.notContainedIn("_User", Parse.User.current());
+   // query.notContainedIn("username", Parse.User.current().get("username"));
 	  query.find({
 	    success:function(results) {
 	    	$scope.$apply(function(){
